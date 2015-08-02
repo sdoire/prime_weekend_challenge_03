@@ -15,7 +15,11 @@ module.exports = function(grunt){
                 expand: true,
                 cwd: "node_modules/",
                 src: [
-                    "bootstrap/dist/css/bootstrap.min.css"
+                    "bootstrap/dist/css/bootstrap.min.css",
+                    "bootstrap/dist/fonts/glyphicons-halflings-regular.woff2",
+                    "bootstrap/dist/fonts/glyphicons-halflings-regular.woff",
+                    "bootstrap/dist/fonts/glyphicons-halflings-regular.ttf",
+                    "bootstrap/dist/js/bootstrap.min.js"
                 ],
                 dest: "server/public/vendors/"
             },

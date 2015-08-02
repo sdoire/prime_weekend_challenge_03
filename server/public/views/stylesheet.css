@@ -1,11 +1,25 @@
-#people{
-    height: 295px;
+.jumbotron {
+    background-image: url(https://dewiskbohv5c1.cloudfront.net/assets/logo-prime-horizontal-6909d23113b83bd59bf681f26f940f97.svg);
+    background-position: 0% 10%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.carousel{
+    height: 420px;
+    padding-top: 10px;
+}
+.carousel .item {
+    width: 75%;
+    height: 350px;
+    background-color: #B8DBFF;
+    margin: auto;
+    padding: 10px;
 }
 body {
     background-color: #8199B2;
 }
 .active {
-    display: block;
+    display: inline-block;
 }
 .inactive {
     display: none;
@@ -13,38 +27,6 @@ body {
 #red {
     color: red;
 }
-.btn {
-    width: 100px;
-    display: inline-block;
-    margin: auto;
-    padding: 10px;
-}
-.btn-primary {
-    margin-bottom: 10px;
-}
-.btn-success {
-    margin-bottom: 10px;
-    margin-left: 10px;
-}
-.well {
-    background-color: #B8DBFF;
-}
-.slider-nav {
-    text-align: center;
-    margin-top: 20px;
-}
-.slider-dots {
-    list-style: none;
-    display: inline-block;
-    padding-left: 0;
-    margin-bottom: 0;
-}
-.slider-dots li {
-    color: #bbbcbc;
-    display: inline;
-    font-size: 30px;
-    margin-right: 5px;
-}
-.slider-dots li.active-dot {
-    color: #363636;
+#labels {
+    color: #550000;
 }
