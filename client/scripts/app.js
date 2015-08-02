@@ -6,12 +6,23 @@ $(document).ready(function(){
         url: "/data",
         success: function (data) {
             console.log(data);
-            $('#people').append("<div class='active well'>" + "<h3>Name: " + data.classmates[0].name + "</h3>" + "<h4>Description: " + data.classmates[0].description + "</h4>" + "<h4>Shoutout: " + data.classmates[0].shoutout + "</h4>" + "</div>");
-            for (var i = 1; i < data.classmates.length; i++) {
-                $('#people').append("<div class='inactive well'>" + "<h3>Name: " + data.classmates[i].name + "</h3>" + "<h4>Description: " + data.classmates[i].description + "</h4>" + "<h4>Shoutout: " + data.classmates[i].shoutout + "</h4>" + "</div>");
-            }
+            //$('#people').append("<div class='active well'>" + "<h3>Name: " + data.classmates[0].name + "</h3>" + "<h4>Description: " + data.classmates[0].description + "</h4>" + "<h4>Shoutout: " + data.classmates[0].shoutout + "</h4>" + "</div>");
+            //for (var i = 1; i < data.classmates.length; i++) {
+            //    $('#people').append("<div class='inactive well'>" + "<h3>Name: " + data.classmates[i].name + "</h3>" + "<h4>Description: " + data.classmates[i].description + "</h4>" + "<h4>Shoutout: " + data.classmates[i].shoutout + "</h4>" + "</div>");
+            //}
+            $.each(data, function() {
+                $('#people').append("<div class='inactive well'></div>");
+                var el = $('#people').children().last();
+                el.append("<h3>Name: " + this.name + "</h3>");
+                el.append("<h4>Description: " + this.description + "</h4>");
+                el.append("<h4>Shoutout: " + this.shoutout + "</h4>");
+            });
+            $('#people').children().first().removeClass('inactive');
+            $('#people').children().first().addClass('active');
         }
     });
+
+
     $('body').on('click', '.btn-primary', function() {
         var currentPerson = $('.active');
         var nextPerson = currentPerson.next();
@@ -48,7 +59,8 @@ $(document).ready(function(){
         currentDot.removeClass('active-dot');
         prevDot.addClass('active-dot');
     });
-
-
 });
+
+
+
 
